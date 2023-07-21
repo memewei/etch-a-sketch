@@ -3,9 +3,64 @@
     width: 500px;
     height: 500px;
     background-color: white;
+    border: 3px solid black;
 
 }
 
 .grid-div{
     user-select: none;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+button{
+    padding: 10px;
+}
+
+.toggle{
+    position: relative;
+    height: 12px;
+    width: 125px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.toggle::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #7d2ae8;
+    border: 10px solid #fff;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.toggle.active::before{
+    left: calc(100% - 70px);
+    background-color: #fff;
+    border-color: #7d2ae8;
 }
